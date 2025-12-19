@@ -7,6 +7,11 @@
 
 html{
    scroll-behavior: smooth; 
+   font-family: 'Lexend', 'Segoe UI', sans-serif;
+}
+
+.lexend{
+  font-family: 'Lexend','Segoe UI',sans-serif;
 }
 
 body {
@@ -51,6 +56,7 @@ a:hover {
   color: #1d4ed8;
   border-color: #1d4ed8;
 }
+
 
 /* Hero Section */
 #hero {
@@ -136,6 +142,19 @@ section h2 {
   margin-bottom: 1rem;
   color: #1f2937;
 }
+
+.description {
+  color: #475569;
+  margin-top: 10rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin: 0.5rem 0 1.2rem 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  max-width: 700px;
+  text-align: left;
+}
+
 /* Project Cards */
 .project-card {
   background: linear-gradient(135deg, #f8fafc 60%, #a5cbf9 100%);
