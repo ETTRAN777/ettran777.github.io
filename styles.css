@@ -1,0 +1,280 @@
+/* Reset + Base Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+   scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Lexend', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #f9f8ff;
+  scroll-behavior: smooth;
+}
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #2563eb;
+}
+
+/* Navigation Bar */
+#navbar {
+  position: sticky;
+  top: 0;
+  background-color: #f9f8ff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+}
+#navbar li {
+  margin: 0 1rem;
+}
+#navbar a {
+  padding: 0.5rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+#navbar a.active {
+  color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Hero Section */
+#hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2f5ec2, #38d4fd);
+  padding: 2rem;
+}
+
+/* Hero Section */
+#subhero {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2f5ec2, #38d4fd);
+  padding: 1rem;
+}
+
+#hero h1, #subhero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+#hero p, #subhero p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+/* General Sections */
+section {
+  padding: 3rem 0rem 1rem; /* top, left/right, bottom */
+  max-width: 900px;
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+}
+
+.contact-section {
+  align-items: center;
+  background: linear-gradient(135deg, #001297, #38d4fd);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  min-width: 100%;
+  height: fit-content;
+  margin: 0;
+  scroll-margin-top: 80px;
+}
+
+.sectionHeader {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.sectionHeader h2 {
+  white-space: nowrap;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sectionBegin {
+  width: 50px;
+  border-bottom: 2px solid #ccc;
+}
+
+.sectionEnd {
+  flex-grow: 50;
+  border-bottom: 2px solid #ccc;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+/* Project Cards */
+.project-card {
+  background: linear-gradient(135deg, #f8fafc 60%, #a5cbf9 100%);
+  border: none;
+  border-radius: 18px;
+  padding: 2rem 2rem 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10), 0 1.5px 6px 0 rgba(59, 130, 246, 0.08);
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.16), 0 3px 12px 0 rgba(59, 130, 246, 0.12);
+  background: linear-gradient(135deg, #e0e7ff 60%, #38bdf8 100%);
+  color: #1e40af;
+}
+.project-card::before {
+  display: none;
+}
+.project-card h3, .project-card p {
+  position: relative;
+  z-index: 1;
+}
+.project-card h3 {
+  margin-bottom: 0.75rem;
+  color: #2563eb;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.project-card p {
+  color: #374151;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Resume / Link Button */
+.resume-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+  color: #fff!important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.10);
+  transition: background 0.2s, transform 0.15s;
+  width: fit-content;
+}
+.resume-btn:hover {
+  background: linear-gradient(90deg, #0a2540 0%, #2563eb 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Responsive: tablets and small laptops */
+@media (max-width: 900px) {
+  #navbar ul {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  #navbar li {
+    margin: 0 0.35rem;
+  }
+
+  #hero {
+    height: auto;
+    padding: 2.25rem 1rem;
+    text-align: center;
+  }
+  #hero h1 {
+    font-size: 2.25rem;
+  }
+  #hero p {
+    font-size: 1rem;
+    max-width: 720px;
+  }
+
+  section {
+    padding: 2rem 1rem 1rem;
+    max-width: 92%;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: none;
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+
+  .project-card h3 { font-size: 1.35rem; }
+}
+
+/* Responsive: phones / very small screens */
+@media (max-width: 480px) {
+  #navbar ul {
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.5rem;
+  }
+  #navbar a {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.45rem;
+  }
+
+  #hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.15;
+  }
+  #hero p {
+    font-size: 0.95rem;
+  }
+
+  .sectionHeader {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-card p {
+    font-size: 1rem;
+  }
+
+  .resume-btn {
+    padding: 0.55rem 0.95rem;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem 0.5rem 1rem;
+  }
+}
