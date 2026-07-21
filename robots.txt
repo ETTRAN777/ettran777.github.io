@@ -1,0 +1,96 @@
+# This file governs the entire ettran777.github.io domain — Portfolio,
+# Tank Tracker (aquariumTool), Sushi King, and UMD Campus Pantry all share
+# this one origin, so robots.txt rules here apply site-wide unless scoped
+# to a specific path below. (mdclubgymnastics.github.io is a *different*
+# domain entirely and is not, and cannot be, covered by this file — it
+# needs its own robots.txt in that repo if any policy is wanted there.)
+#
+# Policy: open to everyone by default. AI *training* crawlers are blocked,
+# but ONLY under /aquariumTool/ — that's the one project where opting out
+# of model training actually matters; the rest isn't worth restricting.
+# This does not affect search visibility or live AI-assistant fetches
+# anywhere, including under /aquariumTool/ — those use separate, distinct
+# user-agents (allowed explicitly further down).
+#
+# This landscape shifts — worth a periodic recheck (quarterly is the
+# commonly cited cadence) against each vendor's current published bot docs.
+# Last reviewed: 2026-07.
+
+Sitemap: https://ettran777.github.io/sitemap.xml
+
+# Everyone, everywhere on this domain — open by default.
+User-agent: *
+Disallow:
+
+# --- AI training crawlers: blocked, but ONLY under /aquariumTool/ ---
+# Each of these bots gets its own group with a single scoped Disallow.
+# Per RFC 9309, an unmatched path is implicitly allowed — so Portfolio,
+# Sushi King, and Campus Pantry stay open to these same bots by default,
+# since no rule below mentions those paths at all.
+
+User-agent: GPTBot
+Disallow: /aquariumTool/
+
+User-agent: ClaudeBot
+Disallow: /aquariumTool/
+
+# Opts out of Gemini/Bard training specifically for this one project —
+# does not affect regular Google Search indexing/ranking (plain Googlebot)
+# anywhere on the domain.
+User-agent: Google-Extended
+Disallow: /aquariumTool/
+
+# Opts out of Apple's AI training specifically for this one project —
+# does not affect regular Applebot (Siri/Spotlight search) anywhere.
+User-agent: Applebot-Extended
+Disallow: /aquariumTool/
+
+# Common Crawl — its dataset feeds many third-party/open-source model
+# training pipelines beyond any single lab.
+User-agent: CCBot
+Disallow: /aquariumTool/
+
+User-agent: Meta-ExternalAgent
+Disallow: /aquariumTool/
+
+User-agent: FacebookBot
+Disallow: /aquariumTool/
+
+User-agent: Diffbot
+Disallow: /aquariumTool/
+
+User-agent: Omgili
+Disallow: /aquariumTool/
+
+# ByteDance's crawler — has a documented history of not reliably honoring
+# robots.txt. Listed anyway as a first line of defense/stated intent, but
+# don't rely on this alone if it ever becomes a real problem (would need
+# server/CDN-level blocking instead, which isn't possible on GitHub Pages).
+User-agent: Bytespider
+Disallow: /aquariumTool/
+
+# --- AI search/retrieval + live user-triggered assistant fetches: explicitly allowed, everywhere ---
+# Distinct from the training crawlers above — these power AI-generated
+# answers/citations and on-demand page reads when a person asks an
+# assistant to look at any of these sites directly. Explicit Allow entries
+# here so the policy doesn't depend on how a given crawler treats an
+# "unlisted" default, and so it's unambiguous that this is different from
+# the training-crawler block above even where both apply to the same path.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
